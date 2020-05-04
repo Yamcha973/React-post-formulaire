@@ -23,7 +23,7 @@ class FormMovies extends Component {
         axios.post(url, this.state)
         .then(res => res.data)
         .then(res => {
-            alert(`Votre film a bien été enregistrer ${res.id}`);
+            alert(`Votre film à bien été ajouter ${res.id} !`);
         })
         .catch(e => {
             console.error(e);
@@ -44,9 +44,8 @@ class FormMovies extends Component {
                         <input type="text" id="poster" name="poster" onChange={this.onChange} value={this.state.poster} />
                     </div>
                     <div className="form-data-comment">
-                        <label>Commentaires :
-                        <textarea value={this.state.comment} onChange={this.onChange} />
-                        </label>
+                        <label htmlFor="comment">Commentaires :</label>
+                        <textarea type="text" id="comment" name="comment" onChange={this.onChange} value={this.state.comment}  />
                     </div>
                     <hr />
                     <div className="form-data">
